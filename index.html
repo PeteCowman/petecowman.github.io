@@ -6,7 +6,7 @@
     <title>Dr. Peter Cowman | Marine Biodiversity & Bioinformatics</title>
     <style>
         :root {
-            --primary-color: #1a365d; /* Deep marine blue */
+            --primary-color: #1a365d; 
             --text-color: #333333;
             --bg-color: #f8fafc;
             --container-bg: #ffffff;
@@ -24,6 +24,15 @@
             color: white;
             padding: 4rem 2rem;
             text-align: center;
+        }
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            margin-bottom: 1.5rem;
         }
         header h1 {
             margin: 0;
@@ -63,6 +72,15 @@
             padding: 1.5rem;
             border-radius: 6px;
             border-left: 4px solid var(--primary-color);
+            display: flex;
+            flex-direction: column;
+        }
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
         }
         .project-card h3 {
             margin-top: 0;
@@ -99,6 +117,7 @@
 <body>
 
     <header>
+        <img src="profile.jpg" alt="Dr. Peter Cowman" class="profile-img">
         <h1>Dr. Peter Cowman</h1>
         <p>Principal Scientist of Marine Biodiversity, Queensland Museum Tropics<br>
            Associate Professor, James Cook University</p>
@@ -115,18 +134,20 @@
             <div class="project-grid">
                 
                 <div class="project-card">
+                    <img src="reef_research.jpg" alt="Coral Reef Research" class="card-img">
                     <h3>CoralBank</h3>
                     <p>Leading large-scale phylogenomic analyses to map the evolutionary trajectories of coral species. This project serves as a foundational dataset for understanding reef resilience and deep-time biodiversity.</p>
                 </div>
 
                 <div class="project-card">
+                    <img src="dna_analyses.jpg" alt="DNA Alignment Analysis" class="card-img">
                     <h3>Dark Diversity Project</h3>
                     <p>Investigating the hidden and uncatalogued biodiversity within marine ecosystems. Leveraging advanced bioinformatics and museum collections to quantify what is missing from current ecological models.</p>
                 </div>
 
                 <div class="project-card">
                     <h3>Museum Exhibitions & Curation</h3>
-                    <p>Translating complex genomic data into public knowledge. Currently collaborating on initiatives such as exhibition, while actively managing the transition and digitization of vital taxonomic collections.</p>
+                    <p>Translating complex genomic data into public knowledge. Actively directing the curation, transition, and digitization of vital taxonomic collections at the Queensland Museum Tropics, ensuring foundational biodiversity baselines are preserved and accessible for global research.</p>
                 </div>
 
             </div>
@@ -137,8 +158,8 @@
             <p style="text-align: center;">For academic inquiries, data requests, or institutional collaborations:</p>
             <div class="contact-links">
                 <a href="mailto:peter.cowman@jcu.edu.au">Email JCU</a>
-                <a href="https://scholar.google.com.au/citations?user=kOjJf6IAAAAJ&hl=en">Google Scholar</a>
-                <a href="https://github.com/PeteCowman">GitHub Repositories</a>
+                <a href="#">Google Scholar</a>
+                <a href="#">GitHub Repositories</a>
             </div>
         </section>
     </div>
