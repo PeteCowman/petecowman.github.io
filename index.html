@@ -7,10 +7,12 @@
     <style>
         :root {
             --primary-color: #1a365d; 
+            --accent-color: #3182ce;
             --text-color: #333333;
             --bg-color: #f8fafc;
             --container-bg: #ffffff;
         }
+        
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
@@ -19,29 +21,44 @@
             margin: 0;
             padding: 0;
         }
+
         header {
             background-color: var(--primary-color);
+            background-image: linear-gradient(135deg, #1a365d 0%, #0d1b2a 100%);
             color: white;
             padding: 5rem 2rem;
             text-align: center;
         }
+
         .profile-img {
             width: 180px;
             height: 180px;
             border-radius: 50%;
-            /* Fixed the crop: 50% horizontal, 20% vertical to focus on the face */
+            /* ADJUSTED CROP: 
+               50% = Center horizontal
+               35% = Vertical focus. 
+               If your head is still too low, decrease to 30%. 
+               If too high, increase to 40%.
+            */
             object-fit: cover;
-            object-position: 50% 20%; 
+            object-position: 50% 35%; 
             border: 4px solid white;
             box-shadow: 0 10px 25px rgba(0,0,0,0.3);
             margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
         }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+
         header h1 {
             margin: 0;
             font-size: 2.8rem;
             font-weight: 800;
             letter-spacing: -0.05rem;
         }
+
         header p {
             font-size: 1.25rem;
             margin-top: 1rem;
@@ -51,6 +68,7 @@
             margin-right: auto;
             font-weight: 300;
         }
+
         .container {
             max-width: 1100px;
             margin: -3rem auto 3rem auto;
@@ -59,6 +77,7 @@
             border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
+
         h2 {
             color: var(--primary-color);
             border-bottom: 2px solid #e2e8f0;
@@ -66,40 +85,47 @@
             margin-top: 3rem;
             font-size: 1.75rem;
         }
+
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2.5rem;
             margin-top: 2rem;
         }
+
         .project-card {
             background: #ffffff;
             padding: 0;
             border-radius: 10px;
             overflow: hidden;
             border: 1px solid #e2e8f0;
-            transition: transform 0.2s ease;
+            transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
         }
+
         .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
         }
+
         .card-content {
             padding: 1.5rem;
         }
+
         .card-img {
             width: 100%;
             height: 220px;
             object-fit: cover;
             border-bottom: 4px solid var(--primary-color);
         }
+
         .project-card h3 {
             margin-top: 0;
             color: var(--primary-color);
             font-size: 1.4rem;
         }
+
         .contact-links {
             display: flex;
             flex-wrap: wrap;
@@ -107,6 +133,7 @@
             margin-top: 3rem;
             justify-content: center;
         }
+
         .contact-links a {
             color: var(--primary-color);
             text-decoration: none;
@@ -116,10 +143,13 @@
             border-radius: 6px;
             transition: all 0.3s;
         }
+
         .contact-links a:hover {
             background-color: var(--primary-color);
             color: white;
+            box-shadow: 0 4px 12px rgba(26, 54, 93, 0.2);
         }
+
         @media (max-width: 768px) {
             .container {
                 margin: 0;
@@ -158,7 +188,7 @@
                 </div>
 
                 <div class="project-card">
-                    <img src="dna_analyses.jpeg" alt="DNA Alignment Analysis" class="card-img">
+                    <img src="dna_analyses.jpg" alt="DNA Alignment Analysis" class="card-img" onerror="this.src='https://via.placeholder.com/400x220?text=DNA+Analysis+Image'">
                     <div class="card-content">
                         <h3>Dark Diversity Project</h3>
                         <p>Investigating the hidden and uncatalogued biodiversity within marine ecosystems. Leveraging advanced bioinformatics and museum collections to quantify what is missing from current ecological models.</p>
